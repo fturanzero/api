@@ -1,0 +1,5 @@
+#authenticate
+curl -X POST -H 'Content-Type: application/json' -d '{"username" : "$user", "password" : "$pass"}' https://$ip:$port/sepm/api/v1/identity/authenticate -k
+
+#get admins
+curl -H 'Authorization: Bearer $token' -H 'Content-Type: application/json'  https://$ip:$port/sepm/api/v1/admin-users | jq
