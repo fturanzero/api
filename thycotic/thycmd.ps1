@@ -16,7 +16,6 @@ $secured_pass = Read-Host  -Prompt "Enter your password" -AsSecureString
 $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secured_pass)
 $pass = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
-
 $site = "https://<fqdn>/SecretServer";
 $api = "$site/api/v1";
 
@@ -34,7 +33,6 @@ Function Get-Token
         grant_type = "password"
     };
 
-
     $headers = $null
     If ($use2fa) {
         $headers = @{
@@ -44,8 +42,7 @@ Function Get-Token
 
     $response = Invoke-RestMethod "$site/oauth2/token" -Method Post -Body $creds -Headers $headers;
     $token = $response.access_token;
-    return $token;
-   
+    return $token;   
 }
 
 Function Launch-Secret
@@ -71,7 +68,6 @@ Function Launch-Secret
 
     $json_launch_with = $launch_with | ConvertTo-Json
 
-   
     $response = Invoke-RestMethod $url -Method Post -Body $json_launch_with -Headers $headers
     $ssUrl = $response.model.ssUrl
     return $ssUrl
