@@ -17,7 +17,7 @@ $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secured_pa
 $pass = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
 
-$site = "https://secretsvault.highcastle.com/SecretServer";
+$site = "https://<fqdn>/SecretServer";
 $api = "$site/api/v1";
 
 Function Get-Token
