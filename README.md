@@ -1,1 +1,1 @@
-# api
+# notes about proprietary softwares
