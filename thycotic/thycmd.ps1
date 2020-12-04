@@ -11,7 +11,6 @@ Param(
     [Switch] $use2fa
 )
 
-#$pwd_string = Read-Host -MaskInput "Enter a Password" 
 $secured_pass = Read-Host  -Prompt "Enter your password" -AsSecureString
 $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secured_pass)
 $pass = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
@@ -71,7 +70,6 @@ Function Launch-Secret
     $response = Invoke-RestMethod $url -Method Post -Body $json_launch_with -Headers $headers
     $ssUrl = $response.model.ssUrl
     return $ssUrl
-
 }
 
 $token = Get-Token -user $user -pass $pass -use2fa:$use2fa
