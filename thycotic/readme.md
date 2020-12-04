@@ -1,6 +1,1 @@
-thycmd usage:
--u username
--s secretid
--l launcherid
--m machine
--t twofactor
+thycmd usage: .\thycmd -u <username> -s <secretid> -l <launcherid> -m <machine> -t (enable 2fa)
