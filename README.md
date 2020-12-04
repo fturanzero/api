@@ -1,1 +1,1 @@
-# notes about proprietary softwares
+notes about proprietary softwares
