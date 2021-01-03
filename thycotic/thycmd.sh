@@ -1,8 +1,8 @@
 #!/bin/bash
 
-site='<url>'
-pass='<pass>'
+site='https://secretserver.highcastle.com/SecretServer'
 user=$1
+pass='12345Platin.'
 secretid=$2
 launcherid=$3
 machine=$4
@@ -12,6 +12,5 @@ launcher_req="{\"launcherid\":${launcherid},\"promptFieldValue\":\"${machine}\",
 
 token=$(curl -s -k -X POST -H 'Content-Type: application/x-www-form-urlencoded' -d $token_req $site'/oauth2/token' | jq -r '.access_token')
 ssUrl=$(curl -s -k -X POST -H 'Authorization: Bearer '$token -H $'Content-Type: application/json' -d $launcher_req $site'/api/v1/launchers/secret' | jq -r '.model.ssUrl')
-$ssLink="sslauncher:///${ssUrl}"
 
-echo ssLink
+echo 'sslauncher:///'$ssUrl
