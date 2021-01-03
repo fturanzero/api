@@ -1,8 +1,8 @@
 #!/bin/bash
 
-site='https://secretserver.highcastle.com/SecretServer'
+site='<url>'
+pass='<pass>'
 user=$1
-pass='12345Platin.'
 secretid=$2
 launcherid=$3
 machine=$4
