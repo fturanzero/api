@@ -1,3 +1,4 @@
 winrm quickconfig
 winrm get winrm/config
 winrm get winrm/config/service
+winrm e winrm/config/listener
