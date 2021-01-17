@@ -10,4 +10,4 @@ $secureString = convertto-securestring "password_123321" -asplaintext -force
 New-LocalUser "winrmdemo" -Password $secureString -FullName "WinRM Demo" -Description"WinRM Demo Account"
 Add-LocalGroupMember -Name 'Administrators' -Member 'winrmdemo'
 
-winrs -r:http://remote:5985 -u:winrmdemo -p:Master00!! ipconfig;whoami
+winrs -r:http://remote:5985 -u:winrmdemo -p:Passwd00!! ipconfig;whoami
