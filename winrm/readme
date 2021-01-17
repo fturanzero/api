@@ -17,3 +17,8 @@ winrs -r:http://remote:5985 -u:winrmdemo -p:Passwd00!! ipconfig;whoami
 Start-Service WinRM
 Set-WSManQuickConfig
 Set-item wsman:localhost\client\trustedhosts -value *
+
+
+
+winrm -hostname 10.4.20.31 -username administrator -password password_123 'ipconfig'
+
