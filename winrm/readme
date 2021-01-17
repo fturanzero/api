@@ -4,3 +4,4 @@ winrm get winrm/config/service
 winrm e winrm/config/listener
 
 start-service winrm
+Set-item wsman:localhost\client\trustedhosts -value *
