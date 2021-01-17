@@ -6,7 +6,7 @@ winrm e winrm/config/listener
 start-service winrm
 Set-item wsman:localhost\client\trustedhosts -value *
 
-$secureString = convertto-securestring "password_123321" -asplaintext -force
+$secureString = convertto-securestring "Passwd00!!" -asplaintext -force
 New-LocalUser "winrmdemo" -Password $secureString -FullName "WinRM Demo" -Description"WinRM Demo Account"
 Add-LocalGroupMember -Name 'Administrators' -Member 'winrmdemo'
 
