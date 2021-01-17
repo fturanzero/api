@@ -19,6 +19,6 @@ Set-WSManQuickConfig
 Set-item wsman:localhost\client\trustedhosts -value *
 
 
-
+https://github.com/masterzen/winrm-cli
 winrm -hostname 10.4.20.31 -username administrator -password password_123 'ipconfig'
 
