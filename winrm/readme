@@ -42,3 +42,12 @@ Bypass-4MSI
 Invoke-Binary /root/Desktop/tools/seatbelt/Seatbelt.exe networkshares
 
 
+winrm delete winrm/config/listener?Address=*+Transport=HTTP
+New-SelfSignedCertificate -DnsName "10.0.0.88" -CertStoreLocationCert:\LocalMachine\My
+winrm create winrm/config/Listener?Address=*+Transport=HTTPS '@{Hostname="10.0.0.88";CertificateThumbprint="37E8C8F6C289225DEF8AE1E02A0D6479B4F6AE58"}'
+New-NetFirewallRule -DisplayName "Windows Remote Management (HTTPS-In)"-Name "WinRMHTTPSIn" -Profile Any -LocalPort 5986 -Protocol TCP -Verbose
+Add-LocalGroupMember -Name 'Event Log Readers' -Member 'winrmdemo'
+Add-LocalGroupMember -Name 'Remote Management Users' -Member 'winrmdemo'
+
+$soptions = New-PSSessionOption -SkipCACheck
+Enter-PSSession -ComputerName 10.0.0.88 -Port 5986 -Credential $cred -SessionOption $soptions -UseSSL
