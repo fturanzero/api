@@ -1,0 +1,1 @@
+New-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Lsa' -Name  'RestrictRemoteSam' -Value 'O:BAG:BAD:(A;;RC;;;WD)' -PropertyType 'String' –Force
